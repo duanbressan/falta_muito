@@ -1,10 +1,10 @@
-package duan.example.navigationdrawer.adapters;
+package duan.example.faltamuito.adapters;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import duan.example.navigationdrawer.MaterialsActivity;
+import duan.example.faltamuito.MaterialsActivity;
 
 
 public class MyPagerAdapter extends FragmentStatePagerAdapter {

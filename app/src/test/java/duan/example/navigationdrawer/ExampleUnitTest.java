@@ -1,4 +1,4 @@
-package duan.example.navigationdrawer;
+package duan.example.faltamuito;
 
 import org.junit.Test;
 

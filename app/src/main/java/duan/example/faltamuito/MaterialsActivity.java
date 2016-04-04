@@ -1,4 +1,4 @@
-package duan.example.navigationdrawer;
+package duan.example.faltamuito;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -14,7 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import duan.example.navigationdrawer.adapters.MyPagerAdapter;
+import duan.example.faltamuito.adapters.MyPagerAdapter;
 
 
 public class MaterialsActivity extends AppCompatActivity {
@@ -27,12 +27,12 @@ public class MaterialsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_materials);
+        setContentView(duan.example.faltamuito.R.layout.activity_materials);
         mAdapter = new MyPagerAdapter(getSupportFragmentManager());
-        mToolbar = (Toolbar) findViewById(R.id.app_bar);
+        mToolbar = (Toolbar) findViewById(duan.example.faltamuito.R.id.app_bar);
         setSupportActionBar(mToolbar);
-        mTabLayout = (TabLayout) findViewById(R.id.tab_layout);
-        mPager = (ViewPager) findViewById(R.id.pager);
+        mTabLayout = (TabLayout) findViewById(duan.example.faltamuito.R.id.tab_layout);
+        mPager = (ViewPager) findViewById(duan.example.faltamuito.R.id.pager);
         mPager.setAdapter(mAdapter);
         mTabLayout.setTabsFromPagerAdapter(mAdapter);
 
@@ -43,7 +43,7 @@ public class MaterialsActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_materials, menu);
+        getMenuInflater().inflate(duan.example.faltamuito.R.menu.menu_materials, menu);
         return true;
     }
 
@@ -51,7 +51,7 @@ public class MaterialsActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.action_settings) {
+        if (id == duan.example.faltamuito.R.id.action_settings) {
             return true;
         }
 
@@ -78,7 +78,7 @@ public class MaterialsActivity extends AppCompatActivity {
             Bundle arguments = getArguments();
             int pageNumber = arguments.getInt(ARG_PAGE);
             TextView myText = new TextView(getActivity());
-            myText.setText(getActivity().getResources().getString(R.string.pagina) + " " + pageNumber);
+            myText.setText(getActivity().getResources().getString(duan.example.faltamuito.R.string.pagina) + " " + pageNumber);
             myText.setGravity(Gravity.CENTER);
             return myText;
         }

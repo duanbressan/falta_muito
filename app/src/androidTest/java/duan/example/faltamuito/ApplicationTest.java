@@ -1,4 +1,4 @@
-package duan.example.navigationdrawer;
+package duan.example.faltamuito;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

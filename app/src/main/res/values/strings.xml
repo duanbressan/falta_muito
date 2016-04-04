@@ -7,13 +7,8 @@
 
     <string name="action_settings">Settings</string>
 
-    <string name="git_hub">https://github.com/duanbressan</string>
-    <string name="duan">Duan Bressan</string>
+    <string name="universidade">Universidade Federal da Fronteira Sul</string>
+    <string name="cc">Ciência da Computação</string>
     <string name="pagina">Página</string>
-
-    <string name="conteudo_main">Um pequeno exemplo de aplicação com:\n
-        1- Página inicial com exemplo de NavigationDrawer;\n
-        2- Página inicial com exemplo de FloatingButton;\n
-        3- Página secundária com exemplo de TabBar.</string>
 
 </resources>
