@@ -23,14 +23,6 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(duan.example.faltamuito.R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(duan.example.faltamuito.R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                loadMaterialsActivity();
-            }
-        });
-
         DrawerLayout drawer = (DrawerLayout) findViewById(duan.example.faltamuito.R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, duan.example.faltamuito.R.string.navigation_drawer_open, duan.example.faltamuito.R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
@@ -72,11 +64,11 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if (id == duan.example.faltamuito.R.id.nav_camera) {
+        if (id == R.id.nav_materials) {
+            loadMaterialsActivity();
+        } else if (id == R.id.nav_statics) {
 
-        } else if (id == duan.example.faltamuito.R.id.nav_gallery) {
-
-        } else if (id == duan.example.faltamuito.R.id.nav_slideshow) {
+        } else if (id == R.id.nav_nexts) {
 
         }
 

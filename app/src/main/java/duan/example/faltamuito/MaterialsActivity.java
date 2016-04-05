@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import duan.example.faltamuito.R;
 
 import duan.example.faltamuito.adapters.MyPagerAdapter;
 
@@ -27,12 +28,14 @@ public class MaterialsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(duan.example.faltamuito.R.layout.activity_materials);
+        setContentView(R.layout.activity_materials);
+
         mAdapter = new MyPagerAdapter(getSupportFragmentManager());
-        mToolbar = (Toolbar) findViewById(duan.example.faltamuito.R.id.app_bar);
+        mAdapter.setAmountOfFragment(3);
+        mToolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(mToolbar);
-        mTabLayout = (TabLayout) findViewById(duan.example.faltamuito.R.id.tab_layout);
-        mPager = (ViewPager) findViewById(duan.example.faltamuito.R.id.pager);
+        mTabLayout = (TabLayout) findViewById(R.id.tab_layout);
+        mPager = (ViewPager) findViewById(R.id.pager);
         mPager.setAdapter(mAdapter);
         mTabLayout.setTabsFromPagerAdapter(mAdapter);
 
@@ -43,7 +46,7 @@ public class MaterialsActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(duan.example.faltamuito.R.menu.menu_materials, menu);
+        getMenuInflater().inflate(R.menu.menu_materials, menu);
         return true;
     }
 
@@ -51,7 +54,7 @@ public class MaterialsActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if (id == duan.example.faltamuito.R.id.action_settings) {
+        if (id == R.id.action_settings) {
             return true;
         }
 
@@ -59,7 +62,9 @@ public class MaterialsActivity extends AppCompatActivity {
     }
 
     public static class MyFragment extends Fragment {
+
         public static final java.lang.String ARG_PAGE = "arg_page";
+        private View fragment;
 
         public MyFragment() {
 
@@ -75,12 +80,13 @@ public class MaterialsActivity extends AppCompatActivity {
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-            Bundle arguments = getArguments();
-            int pageNumber = arguments.getInt(ARG_PAGE);
-            TextView myText = new TextView(getActivity());
-            myText.setText(getActivity().getResources().getString(duan.example.faltamuito.R.string.pagina) + " " + pageNumber);
-            myText.setGravity(Gravity.CENTER);
-            return myText;
+
+            fragment = inflater.inflate(R.layout.fragment_materials, container, false);
+
+            TextView textView = (TextView) fragment.findViewById(R.id.txt);
+            textView.setText("Teste");
+
+            return fragment;
         }
     }
 }

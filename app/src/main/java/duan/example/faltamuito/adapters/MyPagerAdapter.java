@@ -9,8 +9,14 @@ import duan.example.faltamuito.MaterialsActivity;
 
 public class MyPagerAdapter extends FragmentStatePagerAdapter {
 
+    private int count_fragments = 0;
+
     public MyPagerAdapter(FragmentManager fm) {
         super(fm);
+    }
+
+    public void setAmountOfFragment(int count_fragments){
+        this.count_fragments = count_fragments;
     }
 
     @Override
@@ -21,7 +27,7 @@ public class MyPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public int getCount() {
-        return 10;
+        return count_fragments;
     }
 
     @Override
