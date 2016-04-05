@@ -6,16 +6,14 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import duan.example.faltamuito.R;
 
-import duan.example.faltamuito.adapters.MyPagerAdapter;
+import duan.example.faltamuito.adapters.TabBarAdapter;
 
 
 public class MaterialsActivity extends AppCompatActivity {
@@ -23,21 +21,24 @@ public class MaterialsActivity extends AppCompatActivity {
     private Toolbar mToolbar;
     private TabLayout mTabLayout;
     private ViewPager mPager;
-    private MyPagerAdapter mAdapter;
+    private TabBarAdapter tabBarAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_materials);
 
-        mAdapter = new MyPagerAdapter(getSupportFragmentManager());
-        mAdapter.setAmountOfFragment(3);
+        tabBarAdapter = new TabBarAdapter(getSupportFragmentManager());
+        tabBarAdapter.setAmountOfFragment(3);
+
         mToolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(mToolbar);
-        mTabLayout = (TabLayout) findViewById(R.id.tab_layout);
+
         mPager = (ViewPager) findViewById(R.id.pager);
-        mPager.setAdapter(mAdapter);
-        mTabLayout.setTabsFromPagerAdapter(mAdapter);
+        mPager.setAdapter(tabBarAdapter);
+
+        mTabLayout = (TabLayout) findViewById(R.id.tab_layout);
+        mTabLayout.setTabsFromPagerAdapter(tabBarAdapter);
 
         mTabLayout.setupWithViewPager(mPager);
         mPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(mTabLayout));
@@ -63,17 +64,18 @@ public class MaterialsActivity extends AppCompatActivity {
 
     public static class MyFragment extends Fragment {
 
-        public static final java.lang.String ARG_PAGE = "arg_page";
         private View fragment;
+        private static final String KEY = "material";
 
         public MyFragment() {
 
         }
 
-        public static MyFragment newInstance(int pageNumber) {
+        public static MyFragment newInstance(String material_name) {
             MyFragment myFragment = new MyFragment();
+
             Bundle arguments = new Bundle();
-            arguments.putInt(ARG_PAGE, pageNumber + 1);
+            arguments.putString(KEY, material_name);
             myFragment.setArguments(arguments);
             return myFragment;
         }
@@ -81,10 +83,13 @@ public class MaterialsActivity extends AppCompatActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
+            Bundle arguments = getArguments();
+            String name_material = arguments.getString(KEY);
+
             fragment = inflater.inflate(R.layout.fragment_materials, container, false);
 
             TextView textView = (TextView) fragment.findViewById(R.id.txt);
-            textView.setText("Teste");
+            textView.setText(name_material);
 
             return fragment;
         }
