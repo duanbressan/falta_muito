@@ -20,7 +20,8 @@
         </activity>
         <activity
             android:name="duan.example.faltamuito.MaterialsActivity"
-            android:label="@string/title_activity_materials" />
+            android:label="@string/title_activity_materials"
+            android:parentActivityName="duan.example.faltamuito.MainActivity"/>
     </application>
 
 </manifest>
