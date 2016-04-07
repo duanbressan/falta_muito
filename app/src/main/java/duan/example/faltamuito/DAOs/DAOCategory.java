@@ -40,4 +40,16 @@ public class DAOCategory {
 
         return categoryList;
     }
+
+    public Category findCategory(String category_name){
+
+        try{
+            Category category = realm.where(Category.class).equalTo("name", category_name).findFirst();
+            return category;
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

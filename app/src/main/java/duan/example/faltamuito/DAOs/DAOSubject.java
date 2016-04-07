@@ -33,8 +33,14 @@ public class DAOSubject {
 
             subject.setName(name);
 
-            Category category = realm.createObject(Category.class);
-            category.setName(category_name);
+            DAOCategory daoCategory = new DAOCategory(context);
+            Category category = daoCategory.findCategory(category_name);
+
+            if(category == null){
+                category = realm.createObject(Category.class);
+                category.setName(category_name);
+            }
+
             subject.setCategory(category);
 
             subject.setHalf_integral(half_integral);

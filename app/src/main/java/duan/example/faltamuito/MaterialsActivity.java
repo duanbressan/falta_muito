@@ -14,7 +14,11 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.List;
+
+import duan.example.faltamuito.DAOs.DAOCategory;
 import duan.example.faltamuito.adapters.TabBarAdapter;
+import duan.example.faltamuito.models.Category;
 
 
 public class MaterialsActivity extends AppCompatActivity {
@@ -29,10 +33,11 @@ public class MaterialsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_materials);
 
-
+        DAOCategory daoCategory = new DAOCategory(this);
+        List<Category> categoryList = daoCategory.findAllCategory();
 
         tabBarAdapter = new TabBarAdapter(getSupportFragmentManager());
-        tabBarAdapter.setAmountOfFragment(3);
+        tabBarAdapter.setAmountOfFragment(categoryList.size());
 
         mToolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(mToolbar);
