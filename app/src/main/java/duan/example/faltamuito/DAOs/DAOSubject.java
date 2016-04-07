@@ -25,7 +25,7 @@ public class DAOSubject {
         realm = Realm.getDefaultInstance();
     }
 
-    public void insertSubject(String name, String category_name, String half_night, String half_integral, boolean done){
+    public void insertSubject(String name, String category_name,  String half_integral, String half_night, boolean done){
         try {
             realm.beginTransaction();
 

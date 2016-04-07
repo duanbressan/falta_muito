@@ -29,7 +29,7 @@ public class DAOCategory {
         List<Category> categoryList = new ArrayList<>();
         try{
             RealmResults realmResults = realm.where(Category.class).findAll();
-            realmResults.sort("name", RealmResults.SORT_ORDER_DESCENDING);
+            realmResults.sort("name", RealmResults.SORT_ORDER_ASCENDING);
 
             categoryList.addAll(realmResults);
 
