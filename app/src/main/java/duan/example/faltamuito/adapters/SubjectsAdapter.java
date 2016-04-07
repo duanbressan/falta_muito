@@ -6,10 +6,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import java.util.List;
 
+import duan.example.faltamuito.DAOs.DAOSubject;
 import duan.example.faltamuito.R;
 import duan.example.faltamuito.models.Subject;
 
@@ -46,13 +48,22 @@ public class SubjectsAdapter extends BaseAdapter {
 
 		TextView textViewHalfIntegral = (TextView) view.findViewById(R.id.textViewHalfIntegral);
 		TextView textViewHalfNight = (TextView) view.findViewById(R.id.textViewHalfNight);
-		CheckBox textViewName = (CheckBox) view.findViewById(R.id.checkBoxName);
+		CheckBox checkBox = (CheckBox) view.findViewById(R.id.checkBoxName);
 
-		Subject subject = subjectList.get(position);
+		final Subject subject = subjectList.get(position);
 
 		textViewHalfIntegral.setText(subject.getHalf_integral());
 		textViewHalfNight.setText(subject.getHalf_night());
-		textViewName.setText(subject.getName());
+		checkBox.setText(subject.getName());
+		checkBox.setChecked(subject.isDone());
+
+		checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+			@Override
+			public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+				DAOSubject daoSubject = new DAOSubject(context);
+				daoSubject.udpadeSubject(subject, b);
+			}
+		});
 
 		return view;
 	}

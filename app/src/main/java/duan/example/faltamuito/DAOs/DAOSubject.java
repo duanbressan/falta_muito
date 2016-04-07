@@ -59,7 +59,7 @@ public class DAOSubject {
         List<Subject> logSubject = new ArrayList<>();
         try{
             RealmResults realmResults = realm.where(Subject.class).findAll();
-            realmResults.sort("name", RealmResults.SORT_ORDER_DESCENDING);
+            realmResults.sort("half_integral", RealmResults.SORT_ORDER_ASCENDING);
 
             logSubject.addAll(realmResults);
 
@@ -75,6 +75,20 @@ public class DAOSubject {
         try {
             realm.beginTransaction();
             realm.where(Subject.class).findAll().clear();
+            realm.commitTransaction();
+        }
+        catch (Exception e){
+            realm.cancelTransaction();
+            e.printStackTrace();
+        }
+    }
+
+    public void udpadeSubject(Subject subject, boolean done) {
+        try {
+            realm.beginTransaction();
+
+            subject.setDone(done);
+            realm.copyToRealmOrUpdate(subject);
             realm.commitTransaction();
         }
         catch (Exception e){
