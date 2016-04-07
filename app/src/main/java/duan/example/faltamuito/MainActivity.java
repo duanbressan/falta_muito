@@ -17,6 +17,8 @@ import java.util.List;
 
 import duan.example.faltamuito.DAOs.DAOSubject;
 import duan.example.faltamuito.models.Subject;
+import io.realm.Realm;
+import io.realm.RealmConfiguration;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -35,6 +37,9 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(duan.example.faltamuito.R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        setRealm();
+        insertSubjectInRealmBD();
     }
 
     @Override
@@ -87,10 +92,16 @@ public class MainActivity extends AppCompatActivity
         startActivity(intent);
     }
 
+    private void setRealm(){
+
+        RealmConfiguration realmConfig = new RealmConfiguration.Builder(this).build();
+        Realm.setDefaultConfiguration(realmConfig);
+    }
+
     private void insertSubjectInRealmBD(){
 
         DAOSubject daoSubject = new DAOSubject(this);
-        List<Subject> subjectList = daoSubject.findAllLogUse();
+        List<Subject> subjectList = daoSubject.findAllSubjects();
 
         if(subjectList == null || subjectList.size() == 0){
 

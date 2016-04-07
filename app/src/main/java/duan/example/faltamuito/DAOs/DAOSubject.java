@@ -4,6 +4,8 @@ import android.content.Context;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import duan.example.faltamuito.models.Category;
 import duan.example.faltamuito.models.Subject;
 import io.realm.Realm;
 import io.realm.RealmResults;
@@ -23,14 +25,18 @@ public class DAOSubject {
         realm = Realm.getDefaultInstance();
     }
 
-    public void insertSubject(String name, String category, String half_night, String half_integral, boolean done){
+    public void insertSubject(String name, String category_name, String half_night, String half_integral, boolean done){
         try {
             realm.beginTransaction();
 
             Subject subject = realm.createObject(Subject.class);
 
             subject.setName(name);
+
+            Category category = realm.createObject(Category.class);
+            category.setName(category_name);
             subject.setCategory(category);
+
             subject.setHalf_integral(half_integral);
             subject.setHalf_night(half_night);
             subject.setDone(done);
@@ -43,7 +49,7 @@ public class DAOSubject {
         }
     }
 
-    public List<Subject> findAllLogUse() {
+    public List<Subject> findAllSubjects() {
         List<Subject> logSubject = new ArrayList<>();
         try{
             RealmResults realmResults = realm.where(Subject.class).findAll();
@@ -55,7 +61,6 @@ public class DAOSubject {
         catch (Exception e){
             e.printStackTrace();
         }
-
 
         return logSubject;
     }

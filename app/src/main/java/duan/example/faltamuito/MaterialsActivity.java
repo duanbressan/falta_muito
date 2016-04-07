@@ -29,6 +29,8 @@ public class MaterialsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_materials);
 
+
+
         tabBarAdapter = new TabBarAdapter(getSupportFragmentManager());
         tabBarAdapter.setAmountOfFragment(3);
 

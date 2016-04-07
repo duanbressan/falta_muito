@@ -7,7 +7,7 @@ public class Subject extends RealmObject{
 
     @PrimaryKey
     private String name;
-    private String category;
+    private Category category;
     private String half_night;
     private String half_integral;
     private boolean done;
@@ -28,11 +28,11 @@ public class Subject extends RealmObject{
         this.name = name;
     }
 
-    public String getCategory() {
+    public Category getCategory() {
         return category;
     }
 
-    public void setCategory(String category) {
+    public void setCategory(Category category) {
         this.category = category;
     }
 

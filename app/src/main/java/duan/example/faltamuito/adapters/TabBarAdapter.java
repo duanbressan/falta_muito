@@ -43,9 +43,7 @@ public class TabBarAdapter extends FragmentStatePagerAdapter {
                 break;
             case 1: name_material = "Programação";
                 break;
-            case 2: name_material = "Tronco Comum";
-                break;
-            case 3: name_material = "Hardware";
+            case 2: name_material = "Hardware";
                 break;
         }
 
