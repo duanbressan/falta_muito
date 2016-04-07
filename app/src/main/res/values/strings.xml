@@ -19,5 +19,8 @@
     <string name="cursada">Cursada(s)</string>
     <string name="materia">matéria(s)</string>
     <string name="percent">%</string>
+    <string name="periodo_integral">Período Integral:</string>
+    <string name="periodo_noturno">Período Noturno:</string>
+    <string name="semestre">Semestre</string>
 
 </resources>

@@ -62,7 +62,7 @@ public class SubjectsInformationAdapter extends BaseAdapter {
 			}
 		}
 
-		double total = (subjects_done * 100) / subjects;
+		int total = (int) ((subjects_done * 100) / subjects);
 
 		TextView textViewPercentage = (TextView) view.findViewById(R.id.textViewPercentage);
 		TextView textViewName = (TextView) view.findViewById(R.id.textViewName);

@@ -52,8 +52,8 @@ public class SubjectsAdapter extends BaseAdapter {
 
 		final Subject subject = subjectList.get(position);
 
-		textViewHalfIntegral.setText(subject.getHalf_integral());
-		textViewHalfNight.setText(subject.getHalf_night());
+		textViewHalfIntegral.setText(view.getResources().getString(R.string.periodo_integral) + " " + subject.getHalf_integral() + " "  + view.getResources().getString(R.string.semestre));
+		textViewHalfNight.setText(view.getResources().getString(R.string.periodo_noturno) + " " + subject.getHalf_night() + " " + view.getResources().getString(R.string.semestre));
 		checkBox.setText(subject.getName());
 		checkBox.setChecked(subject.isDone());
 

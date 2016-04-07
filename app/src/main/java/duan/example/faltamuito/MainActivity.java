@@ -151,7 +151,7 @@ public class MainActivity extends AppCompatActivity
         long subjects = daoSubject.getAllSubjectCount();
         long subjects_done = daoSubject.getAllSubjectDoneCount();
 
-        double total = (subjects_done * 100) / subjects;
+        int total = (int) ((subjects_done * 100) / subjects);
 
         textViewPercentage.setText(total + getResources().getString(R.string.percent));
         textViewInformation.setText(getResources().getString(R.string.cursada) + " " + subjects_done + " de " + subjects + getResources().getString(R.string.materia));
