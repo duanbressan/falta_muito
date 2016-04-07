@@ -12,11 +12,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Adapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import duan.example.faltamuito.DAOs.DAOCategory;
 import duan.example.faltamuito.DAOs.DAOSubject;
+import duan.example.faltamuito.adapters.SubjectsAdapter;
+import duan.example.faltamuito.adapters.SubjectsInformationAdapter;
+import duan.example.faltamuito.models.Category;
 import duan.example.faltamuito.models.Subject;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
@@ -42,6 +49,7 @@ public class MainActivity extends AppCompatActivity
         setRealm();
         insertSubjectInRealmBD();
         setFullInformation();
+        setFullSubjectInformation();
     }
 
     @Override
@@ -131,7 +139,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onResume() {
         setFullInformation();
-
+        setFullSubjectInformation();
         super.onResume();
     }
 
@@ -147,5 +155,15 @@ public class MainActivity extends AppCompatActivity
 
         textViewPercentage.setText(total + "%");
         textViewInformation.setText("Cursada(s) " + subjects_done + " de " + subjects + " matéria(s)");
+    }
+
+    private void setFullSubjectInformation(){
+
+        ListView listView = (ListView) findViewById(R.id.listViewSubject);
+
+        DAOCategory daoCategory = new DAOCategory(this);
+        SubjectsInformationAdapter subjectsAdapter = new SubjectsInformationAdapter(this, daoCategory.findAllCategory());
+
+        listView.setAdapter(subjectsAdapter);
     }
 }

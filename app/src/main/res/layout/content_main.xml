@@ -49,4 +49,21 @@
 
     </LinearLayout>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:text="TOTAL POR DISCIPLINAS"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="12dp"/>
+
+    <ListView
+        android:id="@+id/listViewSubject"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6.5"
+        android:background="@color/colorPrimaryLight"
+        android:choiceMode="singleChoice"
+        android:dividerHeight="2px" />
 </LinearLayout>
