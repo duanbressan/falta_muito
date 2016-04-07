@@ -71,6 +71,28 @@ public class DAOSubject {
         return logSubject;
     }
 
+    public long getAllSubjectCount() {
+        long count = 0;
+        try{
+            count = realm.where(Subject.class).count();
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        return count;
+    }
+
+    public long getAllSubjectDoneCount() {
+        long count = 0;
+        try{
+            count = realm.where(Subject.class).equalTo("done", true).count();
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        return count;
+    }
+
     public void deleteAllSubjects() {
         try {
             realm.beginTransaction();

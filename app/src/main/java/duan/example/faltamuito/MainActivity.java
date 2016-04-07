@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import java.util.List;
 
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity
 
         setRealm();
         insertSubjectInRealmBD();
+        setFullInformation();
     }
 
     @Override
@@ -124,5 +126,26 @@ public class MainActivity extends AppCompatActivity
             daoSubject.insertSubject("Sistemas Operacionais", "Hardware", "6º", "5º", false);
 
         }
+    }
+
+    @Override
+    protected void onResume() {
+        setFullInformation();
+
+        super.onResume();
+    }
+
+    private void setFullInformation(){
+        TextView textViewPercentage = (TextView) findViewById(R.id.textViewPercentage);
+        TextView textViewInformation = (TextView) findViewById(R.id.textViewInformation);
+
+        DAOSubject daoSubject = new DAOSubject(this);
+        long subjects = daoSubject.getAllSubjectCount();
+        long subjects_done = daoSubject.getAllSubjectDoneCount();
+
+        double total = (subjects_done * 100) / subjects;
+
+        textViewPercentage.setText(total + "%");
+        textViewInformation.setText("Cursada(s) " + subjects_done + " de " + subjects + " matéria(s)");
     }
 }
