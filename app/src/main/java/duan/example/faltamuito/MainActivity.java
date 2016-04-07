@@ -13,6 +13,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.List;
+
+import duan.example.faltamuito.DAOs.DAOSubject;
+import duan.example.faltamuito.models.Subject;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -80,5 +85,33 @@ public class MainActivity extends AppCompatActivity
     private void loadMaterialsActivity(){
         Intent intent = new Intent(MainActivity.this, MaterialsActivity.class);
         startActivity(intent);
+    }
+
+    private void insertSubjectInRealmBD(){
+
+        DAOSubject daoSubject = new DAOSubject(this);
+        List<Subject> subjectList = daoSubject.findAllLogUse();
+
+        if(subjectList == null || subjectList.size() == 0){
+
+            /**MATEMÁTICA**/
+            daoSubject.insertSubject("Matemática Instrumental", "Matemática", "1º", "1º", false);
+            daoSubject.insertSubject("Cálculo 1", "Matemática", "3º", "2º", false);
+            daoSubject.insertSubject("Cálculo 2", "Matemática", "5º", "3º", false);
+            daoSubject.insertSubject("Cálculo Numérico", "Matemática", "6º", "5º", false);
+
+            /**PROGRAMAÇÃO**/
+            daoSubject.insertSubject("Algorítimos e Programação", "Programação", "1º", "1º", false);
+            daoSubject.insertSubject("Estrutura de Dados 1", "Programação", "3º", "2º", false);
+            daoSubject.insertSubject("estrutura de dados 2", "Programação", "5º", "3º", false);
+            daoSubject.insertSubject("Grafos", "Programação", "6º", "5º", false);
+
+            /**HARDWARE**/
+            daoSubject.insertSubject("Circuítos Digitais", "Hardware", "1º", "1º", false);
+            daoSubject.insertSubject("Sistemas Digitais", "Hardware", "3º", "2º", false);
+            daoSubject.insertSubject("organização de Computadores", "Hardware", "5º", "3º", false);
+            daoSubject.insertSubject("Sistemas Operacionais", "Hardware", "6º", "5º", false);
+
+        }
     }
 }

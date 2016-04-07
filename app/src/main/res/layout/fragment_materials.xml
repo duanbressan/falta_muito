@@ -4,14 +4,12 @@
     android:layout_height="match_parent"
     android:background="#000000">
 
-    <TextView
-        android:layout_marginTop="10dp"
-        android:id="@+id/txt"
+    <ListView
+        android:id="@+id/listViewSubject"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="#FFFFFF"
-        android:gravity="left"
-        android:textSize="22sp"
-        android:text="Teste"
-        android:textStyle="bold" />
+        android:background="#DFDFDF"
+        android:choiceMode="singleChoice"
+        android:dividerHeight="2px" />
+
 </LinearLayout>

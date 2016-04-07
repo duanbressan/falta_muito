@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import duan.example.faltamuito.adapters.TabBarAdapter;
@@ -65,7 +66,8 @@ public class MaterialsActivity extends AppCompatActivity {
     public static class MyFragment extends Fragment {
 
         private View fragment;
-        private static final String KEY = "material";
+        private static final String KEY = "subject";
+        private ListView list_subject;
 
         public MyFragment() {
 
@@ -87,9 +89,6 @@ public class MaterialsActivity extends AppCompatActivity {
             String name_material = arguments.getString(KEY);
 
             fragment = inflater.inflate(R.layout.fragment_materials, container, false);
-
-            TextView textView = (TextView) fragment.findViewById(R.id.txt);
-            textView.setText(name_material);
 
             return fragment;
         }
