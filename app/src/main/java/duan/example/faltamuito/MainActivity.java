@@ -153,8 +153,8 @@ public class MainActivity extends AppCompatActivity
 
         double total = (subjects_done * 100) / subjects;
 
-        textViewPercentage.setText(total + "%");
-        textViewInformation.setText("Cursada(s) " + subjects_done + " de " + subjects + " matéria(s)");
+        textViewPercentage.setText(total + getResources().getString(R.string.percent));
+        textViewInformation.setText(getResources().getString(R.string.cursada) + " " + subjects_done + " de " + subjects + getResources().getString(R.string.materia));
     }
 
     private void setFullSubjectInformation(){

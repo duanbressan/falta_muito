@@ -69,10 +69,10 @@ public class SubjectsInformationAdapter extends BaseAdapter {
 		TextView textViewTotal = (TextView) view.findViewById(R.id.textViewTotal);
 		TextView textViewTotalDone = (TextView) view.findViewById(R.id.textViewTotalDone);
 
-		textViewPercentage.setText(total + "%");
+		textViewPercentage.setText(total + view.getResources().getString(R.string.percent));
 		textViewName.setText(categoryList.get(position).getName());
-		textViewTotal.setText("Total de matérias: "  + subjects);
-		textViewTotalDone.setText("Total de matérias cursadas: " + subjects_done);
+		textViewTotal.setText(view.getResources().getString(R.string.total_de_materias) + " " + subjects);
+		textViewTotalDone.setText(view.getResources().getString(R.string.total_de_materias_cursadas) + " " + subjects_done);
 
 		return view;
 	}

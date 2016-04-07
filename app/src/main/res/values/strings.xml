@@ -12,4 +12,12 @@
     <string name="estatisticas">Estatísticas</string>
     <string name="proximas_materias">Próximas Matérias</string>
 
+    <string name="total_de_materias">total de matérias</string>
+    <string name="total_de_materias_cursadas">Total de matérias cursadas:</string>
+    <string name="total_por_disciplinas">TOTAL POR DISCIPLINAS</string>
+    <string name="total">TOTAL</string>
+    <string name="cursada">Cursada(s)</string>
+    <string name="materia">matéria(s)</string>
+    <string name="percent">%</string>
+
 </resources>
