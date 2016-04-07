@@ -2,13 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000">
+    android:background="#ffffff">
 
     <ListView
         android:id="@+id/listViewSubject"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#DFDFDF"
+        android:background="#ffffff"
         android:choiceMode="singleChoice"
         android:dividerHeight="2px" />
 

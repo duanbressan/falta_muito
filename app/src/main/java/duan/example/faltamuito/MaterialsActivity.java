@@ -14,11 +14,15 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import duan.example.faltamuito.DAOs.DAOCategory;
+import duan.example.faltamuito.DAOs.DAOSubject;
+import duan.example.faltamuito.adapters.SubjectsAdapter;
 import duan.example.faltamuito.adapters.TabBarAdapter;
 import duan.example.faltamuito.models.Category;
+import duan.example.faltamuito.models.Subject;
 
 
 public class MaterialsActivity extends AppCompatActivity {
@@ -38,6 +42,7 @@ public class MaterialsActivity extends AppCompatActivity {
 
         tabBarAdapter = new TabBarAdapter(getSupportFragmentManager());
         tabBarAdapter.setAmountOfFragment(categoryList.size());
+        tabBarAdapter.setListCategory(categoryList);
 
         mToolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(mToolbar);
@@ -74,7 +79,7 @@ public class MaterialsActivity extends AppCompatActivity {
 
         private View fragment;
         private static final String KEY = "subject";
-        private ListView list_subject;
+        private ListView listViewSubject;
 
         public MyFragment() {
 
@@ -95,7 +100,20 @@ public class MaterialsActivity extends AppCompatActivity {
             Bundle arguments = getArguments();
             String name_material = arguments.getString(KEY);
 
-            fragment = inflater.inflate(R.layout.fragment_materials, container, false);
+            this.fragment = inflater.inflate(R.layout.fragment_materials, container, false);
+            this.listViewSubject = (ListView) fragment.findViewById(R.id.listViewSubject);
+
+            DAOSubject daoSubject = new DAOSubject(getActivity());
+            List<Subject> subjectList = daoSubject.findAllSubjects();
+            List<Subject> subjectListAdapter = new ArrayList<>();
+            for(int i = 0; i < subjectList.size(); i++){
+                if(subjectList.get(i).getCategory().getName().equals(name_material)){
+                    subjectListAdapter.add(subjectList.get(i));
+                }
+            }
+
+            SubjectsAdapter subjectsAdapter = new SubjectsAdapter(getActivity(),subjectListAdapter);
+            listViewSubject.setAdapter(subjectsAdapter);
 
             return fragment;
         }

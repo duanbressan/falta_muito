@@ -4,12 +4,16 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
+import java.util.List;
+
 import duan.example.faltamuito.MaterialsActivity;
+import duan.example.faltamuito.models.Category;
 
 
 public class TabBarAdapter extends FragmentStatePagerAdapter {
 
     private int count_fragments = 0;
+    private List<Category> categoryList;
 
     public TabBarAdapter(FragmentManager fm) {
         super(fm);
@@ -17,6 +21,10 @@ public class TabBarAdapter extends FragmentStatePagerAdapter {
 
     public void setAmountOfFragment(int count_fragments){
         this.count_fragments = count_fragments;
+    }
+
+    public void setListCategory(List<Category> categoryList){
+        this.categoryList = categoryList;
     }
 
     @Override
@@ -37,16 +45,6 @@ public class TabBarAdapter extends FragmentStatePagerAdapter {
     }
 
     private String getNameMaterial(int position){
-        String name_material = "";
-        switch (position){
-            case 0: name_material = "Matemática";
-                break;
-            case 1: name_material = "Programação";
-                break;
-            case 2: name_material = "Hardware";
-                break;
-        }
-
-        return name_material;
+        return categoryList.get(position).getName();
     }
 }

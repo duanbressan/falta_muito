@@ -2,20 +2,30 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-	android:weightSum="5">
+    android:orientation="horizontal"
+	android:weightSum="10">
+
+	<CheckBox
+		android:id="@+id/checkBoxName"
+		android:layout_width="0dp"
+		android:layout_height="match_parent"
+		android:layout_weight="8"
+		android:textColor="#000000"
+		android:textSize="18sp"
+		android:text="Teste"
+		android:textStyle="bold"/>
 
 	<LinearLayout
-		android:layout_width="match_parent"
-		android:layout_height="0dp"
-		android:layout_weight="1"
-		android:orientation="horizontal"
-		android:weightSum="10">
+		android:layout_width="0dp"
+		android:layout_height="match_parent"
+		android:layout_weight="2"
+		android:orientation="vertical"
+		android:weightSum="8">
 
 		<TextView
 			android:id="@+id/textViewTitle1"
-			android:layout_width="0dp"
-			android:layout_height="match_parent"
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
 			android:layout_weight="2"
 			android:textColor="#000000"
 			android:textSize="10sp"
@@ -25,21 +35,21 @@
 			android:layout_gravity="center"/>
 
 		<TextView
-			android:id="@+id/textViewTitle2"
-			android:layout_width="0dp"
-			android:layout_height="match_parent"
-			android:layout_weight="6"
+			android:id="@+id/textViewHalfIntegral"
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
+			android:layout_weight="2"
 			android:textColor="#000000"
 			android:textSize="10sp"
-			android:text="Matéria"
+			android:text="Teste"
 			android:textStyle="bold"
 			android:gravity="center"
 			android:layout_gravity="center"/>
 
 		<TextView
 			android:id="@+id/textViewTitle3"
-			android:layout_width="0dp"
-			android:layout_height="match_parent"
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
 			android:layout_weight="2"
 			android:textColor="#000000"
 			android:textSize="10sp"
@@ -47,41 +57,11 @@
 			android:textStyle="bold"
 			android:gravity="center"
 			android:layout_gravity="center"/>
-	</LinearLayout>
-
-	<LinearLayout
-		android:layout_width="match_parent"
-		android:layout_height="0dp"
-		android:layout_weight="4"
-		android:orientation="horizontal"
-		android:weightSum="10">
-
-		<TextView
-			android:id="@+id/textViewHalfIntegral"
-			android:layout_width="0dp"
-			android:layout_height="match_parent"
-			android:layout_weight="2"
-			android:textColor="#000000"
-			android:textSize="10sp"
-			android:text="Teste"
-			android:textStyle="bold"
-			android:gravity="center"
-			android:layout_gravity="center"/>
-
-		<CheckBox
-			android:id="@+id/textViewName"
-			android:layout_width="0dp"
-			android:layout_height="match_parent"
-			android:layout_weight="6"
-			android:textColor="#000000"
-			android:textSize="10sp"
-			android:text="Teste"
-			android:textStyle="bold"/>
 
 		<TextView
 			android:id="@+id/textViewHalfNight"
-			android:layout_width="0dp"
-			android:layout_height="match_parent"
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
 			android:layout_weight="2"
 			android:textColor="#000000"
 			android:textSize="10sp"
