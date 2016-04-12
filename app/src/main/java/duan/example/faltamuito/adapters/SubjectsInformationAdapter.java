@@ -13,6 +13,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import duan.example.faltamuito.DAOs.DAOSubject;
+import duan.example.faltamuito.MainActivity;
 import duan.example.faltamuito.R;
 import duan.example.faltamuito.models.Category;
 import duan.example.faltamuito.models.Subject;
@@ -43,7 +44,7 @@ public class SubjectsInformationAdapter extends BaseAdapter {
 	}
 
 	@Override
-	public View getView(int position, View view, ViewGroup parent) {
+	public View getView(final int position, View view, ViewGroup parent) {
 		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		view = inflater.inflate(R.layout.iten_percentage_subject, null);
 		view.setTag(categoryList.get(position));
@@ -74,6 +75,14 @@ public class SubjectsInformationAdapter extends BaseAdapter {
 		textViewName.setText(categoryList.get(position).getName());
 		textViewTotal.setText(view.getResources().getString(R.string.total_de_materias) + " " + subjects);
 		textViewTotalDone.setText(view.getResources().getString(R.string.total_de_materias_cursadas) + " " + subjects_done);
+
+
+		view.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				((MainActivity) context).loadMaterialsActivityInSpecificIten(position);
+			}
+		});
 
 		return view;
 	}

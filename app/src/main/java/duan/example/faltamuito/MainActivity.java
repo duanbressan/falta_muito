@@ -91,8 +91,14 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    private void loadMaterialsActivity(){
+    public void loadMaterialsActivity(){
         Intent intent = new Intent(MainActivity.this, MaterialsActivity.class);
+        startActivity(intent);
+    }
+
+    public void loadMaterialsActivityInSpecificIten(int iten){
+        Intent intent = new Intent(MainActivity.this, MaterialsActivity.class);
+        intent.putExtra("page", iten);
         startActivity(intent);
     }
 

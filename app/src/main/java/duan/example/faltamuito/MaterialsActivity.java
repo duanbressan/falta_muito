@@ -1,6 +1,7 @@
 package duan.example.faltamuito;
 
 import android.app.ActionBar;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -50,6 +51,10 @@ public class MaterialsActivity extends AppCompatActivity {
 
         mPager = (ViewPager) findViewById(R.id.pager);
         mPager.setAdapter(tabBarAdapter);
+
+        Intent intent = getIntent();
+        int page = intent.getIntExtra("page", 0);
+        mPager.setCurrentItem(page);
 
         mTabLayout = (TabLayout) findViewById(R.id.tab_layout);
         mTabLayout.setTabsFromPagerAdapter(tabBarAdapter);
