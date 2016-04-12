@@ -1,59 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView
+	xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
-	android:weightSum="10"
-	android:layout_margin="2dp"
 	android:background="@android:color/white">
 
-	<TextView
-		android:id="@+id/textViewPercentage"
-		android:layout_width="0dp"
-		android:layout_height="match_parent"
-		android:layout_weight="3"
-		android:text="10%"
-		android:layout_gravity="center"
-		android:gravity="center"
-		android:textSize="30dp"/>
-
 	<LinearLayout
-		android:layout_width="0dp"
+		android:layout_width="match_parent"
 		android:layout_height="match_parent"
-		android:layout_weight="7"
-		android:orientation="vertical"
 		android:weightSum="10"
-		android:layout_marginBottom="4dp">
+		android:orientation="horizontal"
+		android:layout_margin="8dp">
 
 		<TextView
-			android:id="@+id/textViewName"
-			android:layout_width="match_parent"
-			android:layout_height="0dp"
-			android:layout_weight="5"
-			android:text="MATEMÁTICA"
+			android:id="@+id/textViewPercentage"
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:layout_weight="3"
+			android:text="10%"
 			android:layout_gravity="center"
 			android:gravity="center"
-			android:textSize="18dp"/>
+			android:textSize="30dp"/>
 
-		<TextView
-			android:id="@+id/textViewTotal"
-			android:layout_width="match_parent"
-			android:layout_height="0dp"
-			android:layout_weight="2.5"
-			android:text="Total de matérias: 10"
-			android:layout_gravity="center"
-			android:gravity="center"
-			android:textSize="14dp"/>
+		<LinearLayout
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:layout_weight="7"
+			android:orientation="vertical"
+			android:weightSum="10"
+			android:layout_marginBottom="4dp">
 
-		<TextView
-			android:id="@+id/textViewTotalDone"
-			android:layout_width="match_parent"
-			android:layout_height="0dp"
-			android:layout_weight="2.5"
-			android:text="Total de matérias cursada: 8"
-			android:layout_gravity="center"
-			android:gravity="center"
-			android:textSize="14dp"/>
+			<TextView
+				android:id="@+id/textViewName"
+				android:layout_width="match_parent"
+				android:layout_height="0dp"
+				android:layout_weight="5"
+				android:text="MATEMÁTICA"
+				android:layout_gravity="center"
+				android:gravity="center"
+				android:textSize="18dp"/>
+
+			<TextView
+				android:id="@+id/textViewTotal"
+				android:layout_width="match_parent"
+				android:layout_height="0dp"
+				android:layout_weight="2.5"
+				android:text="Total de matérias: 10"
+				android:layout_gravity="center"
+				android:gravity="center"
+				android:textSize="14dp"/>
+
+			<TextView
+				android:id="@+id/textViewTotalDone"
+				android:layout_width="match_parent"
+				android:layout_height="0dp"
+				android:layout_weight="2.5"
+				android:text="Total de matérias cursada: 8"
+				android:layout_gravity="center"
+				android:gravity="center"
+				android:textSize="14dp"/>
+		</LinearLayout>
 	</LinearLayout>
-    
-</LinearLayout>
+
+</android.support.v7.widget.CardView>

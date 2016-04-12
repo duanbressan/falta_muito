@@ -1,6 +1,7 @@
 package duan.example.faltamuito.adapters;
 
 import android.content.Context;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,7 +26,7 @@ public class SubjectsInformationAdapter extends BaseAdapter {
 		this.context = ctx;
 		this.categoryList = categoryList;
 	}
-	
+
 	@Override
 	public int getCount() {
 		return categoryList.size();
