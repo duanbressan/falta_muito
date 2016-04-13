@@ -2,53 +2,61 @@
 <android.support.v7.widget.CardView
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="match_parent"
-	android:layout_height="match_parent"
+	android:layout_height="wrap_content"
 	android:background="@android:color/white">
 
-	<LinearLayout
+	<RelativeLayout
 		android:layout_width="match_parent"
-		android:layout_height="match_parent"
-		android:orientation="vertical"
-		android:weightSum="10">
+		android:layout_height="match_parent">
+
+		<TextView
+			android:id="@+id/textViewName"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textColor="@color/colorAccent"
+			android:textSize="20sp"
+			android:text="Teste"
+			android:textStyle="bold"
+			android:layout_alignParentLeft="true"
+			android:layout_alignParentTop="true"
+			android:layout_marginTop="8dp"
+			android:layout_marginLeft="60dp"/>
+
+		<TextView
+			android:id="@+id/textViewHalfIntegral"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textColor="#c1c1c1"
+			android:textSize="10sp"
+			android:text="Teste"
+			android:textStyle="bold"
+			android:layout_alignLeft="@+id/textViewName"
+			android:layout_below="@+id/textViewName"
+			android:layout_marginTop="4dp"/>
+
+		<TextView
+			android:id="@+id/textViewHalfNight"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textColor="#c1c1c1"
+			android:textSize="10sp"
+			android:text="Teste"
+			android:textStyle="bold"
+			android:layout_alignLeft="@+id/textViewName"
+			android:layout_below="@+id/textViewHalfIntegral"
+			android:layout_marginTop="4dp"
+			android:layout_marginBottom="8dp"/>
 
 		<CheckBox
 			android:id="@+id/checkBoxName"
 			android:layout_width="match_parent"
-			android:layout_height="0dp"
-			android:layout_weight="8"
+			android:layout_height="wrap_content"
 			android:textColor="@color/colorAccent"
-			android:textSize="18sp"
-			android:text="Teste"
-			android:textStyle="bold"/>
-
-
-		<TextView
-			android:id="@+id/textViewHalfIntegral"
-			android:layout_width="match_parent"
-			android:layout_height="0dp"
-			android:layout_weight="1"
-			android:textColor="#c1c1c1"
-			android:textSize="10sp"
-			android:text="Teste"
+			android:textSize="20sp"
 			android:textStyle="bold"
-			android:gravity="center_vertical"
-			android:layout_gravity="center_vertical"
-			android:layout_marginLeft="35dp"/>
+			android:layout_alignTop="@+id/textViewName"
+			android:layout_alignBottom="@+id/textViewHalfNight"/>
 
-		<TextView
-			android:id="@+id/textViewHalfNight"
-			android:layout_width="match_parent"
-			android:layout_height="0dp"
-			android:layout_weight="1"
-			android:textColor="#c1c1c1"
-			android:textSize="10sp"
-			android:text="Teste"
-			android:textStyle="bold"
-			android:gravity="center_vertical"
-			android:layout_gravity="center_vertical"
-			android:layout_marginLeft="35dp"
-			android:layout_marginBottom="5dp"/>
-
-	</LinearLayout>
+	</RelativeLayout>
 
 </android.support.v7.widget.CardView>

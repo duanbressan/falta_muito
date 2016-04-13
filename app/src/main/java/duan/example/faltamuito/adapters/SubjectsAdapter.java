@@ -48,13 +48,14 @@ public class SubjectsAdapter extends BaseAdapter {
 
 		TextView textViewHalfIntegral = (TextView) view.findViewById(R.id.textViewHalfIntegral);
 		TextView textViewHalfNight = (TextView) view.findViewById(R.id.textViewHalfNight);
+		TextView textViewName = (TextView) view.findViewById(R.id.textViewName);
 		CheckBox checkBox = (CheckBox) view.findViewById(R.id.checkBoxName);
 
 		final Subject subject = subjectList.get(position);
 
 		textViewHalfIntegral.setText(view.getResources().getString(R.string.periodo_integral) + " " + subject.getHalf_integral() + " "  + view.getResources().getString(R.string.semestre));
 		textViewHalfNight.setText(view.getResources().getString(R.string.periodo_noturno) + " " + subject.getHalf_night() + " " + view.getResources().getString(R.string.semestre));
-		checkBox.setText(subject.getName());
+		textViewName.setText(subject.getName());
 		checkBox.setChecked(subject.isDone());
 
 		checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
