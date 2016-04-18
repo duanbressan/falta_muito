@@ -12,15 +12,13 @@
 		android:orientation="horizontal"
 		android:layout_margin="8dp">
 
-		<TextView
-			android:id="@+id/textViewPercentage"
+		<RelativeLayout
+			android:id="@+id/relativelayoutChart"
 			android:layout_width="0dp"
 			android:layout_height="match_parent"
 			android:layout_weight="3"
-			android:text="10%"
 			android:layout_gravity="center"
-			android:gravity="center"
-			android:textSize="30dp"/>
+			android:gravity="center"/>
 
 		<LinearLayout
 			android:layout_width="0dp"
