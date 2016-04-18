@@ -13,12 +13,15 @@ import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import org.achartengine.GraphicalView;
+
 import java.util.List;
 
 import duan.example.faltamuito.DAOs.DAOCategory;
 import duan.example.faltamuito.DAOs.DAOSubject;
 import duan.example.faltamuito.adapters.SubjectsInformationAdapter;
 import duan.example.faltamuito.models.Subject;
+import duan.example.faltamuito.utilitys.PieChartView;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 
