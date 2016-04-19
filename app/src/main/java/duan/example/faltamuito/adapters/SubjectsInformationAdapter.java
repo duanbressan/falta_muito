@@ -108,12 +108,10 @@ public class SubjectsInformationAdapter extends BaseAdapter {
 
 		txtPorcentagem.setGravity(Gravity.CENTER);
 		txtPorcentagem.setText(valor + "%");
-		txtPorcentagem.setTextSize(TypedValue.COMPLEX_UNIT_PX, 22);
+		txtPorcentagem.setTextSize(TypedValue.COMPLEX_UNIT_PX, 30);
 		txtPorcentagem.setTextColor(Color.parseColor("#666666"));
 		txtPorcentagem.setTypeface(null, Typeface.BOLD);
 		txtPorcentagem.setLayoutParams(p);
-		txtPorcentagem.setBackgroundResource(R.drawable.background_txtview_redondo);
-
 
 		chartContainer.addView(txtPorcentagem);
 	}
