@@ -97,8 +97,13 @@ public class SubjectsInformationAdapter extends BaseAdapter {
 	private void addValueToChart(View view, int valor){
 
 		RelativeLayout chartContainer = (RelativeLayout) view.findViewById(R.id.relativelayoutChart);
+		chartContainer.setFocusable(false);
+		chartContainer.setClickable(false);
 
 		GraphicalView chartView = PieChartView.getNewInstance(context, valor, 100 - valor);
+		chartView.setFocusable(false);
+		chartView.setClickable(false);
+
 		chartContainer.addView(chartView);
 
 		RelativeLayout.LayoutParams p = new RelativeLayout.LayoutParams(50,50);
@@ -114,7 +119,5 @@ public class SubjectsInformationAdapter extends BaseAdapter {
 		txtPorcentagem.setLayoutParams(p);
 
 		chartContainer.addView(txtPorcentagem);
-
 	}
-
 }

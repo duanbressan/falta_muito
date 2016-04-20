@@ -21,7 +21,8 @@
 			android:layout_gravity="center"
 			android:gravity="center"
 			android:clickable="false"
-			android:focusable="false">
+			android:focusable="false"
+			android:touchscreenBlocksFocus="true">
 
 			<RelativeLayout
 				android:id="@+id/relativelayoutChart"
@@ -30,7 +31,8 @@
 				android:layout_gravity="center"
 				android:gravity="center"
 				android:clickable="false"
-				android:focusable="false"/>
+				android:focusable="false"
+				android:touchscreenBlocksFocus="true"/>
 		</RelativeLayout>
 
 		<LinearLayout
