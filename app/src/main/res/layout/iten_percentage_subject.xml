@@ -10,7 +10,9 @@
 		android:layout_height="match_parent"
 		android:weightSum="10"
 		android:orientation="horizontal"
-		android:layout_margin="8dp">
+		android:layout_margin="8dp"
+		android:clickable="false"
+		android:focusable="false">
 
 		<RelativeLayout
 			android:id="@+id/relativelayoutChart"
@@ -18,7 +20,10 @@
 			android:layout_height="match_parent"
 			android:layout_weight="3"
 			android:layout_gravity="center"
-			android:gravity="center"/>
+			android:gravity="center"
+			android:clickable="false"
+			android:focusable="false"
+			/>
 
 		<LinearLayout
 			android:layout_width="0dp"
