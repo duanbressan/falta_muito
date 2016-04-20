@@ -22,17 +22,17 @@
 			android:gravity="center"
 			android:clickable="false"
 			android:focusable="false"
-			android:touchscreenBlocksFocus="true">
+			android:touchscreenBlocksFocus="false">
 
 			<RelativeLayout
 				android:id="@+id/relativelayoutChart"
-				android:layout_width="80dp"
-				android:layout_height="80dp"
+				android:layout_width="100dp"
+				android:layout_height="100dp"
 				android:layout_gravity="center"
 				android:gravity="center"
 				android:clickable="false"
 				android:focusable="false"
-				android:touchscreenBlocksFocus="true"/>
+				android:touchscreenBlocksFocus="false"/>
 		</RelativeLayout>
 
 		<LinearLayout
