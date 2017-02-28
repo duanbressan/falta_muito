@@ -1,5 +1,5 @@
 # Falta Muito?
-Aplicação destinada a ajudar a melhorar o acompanhamento dos alunos do curso de Ciência da Compuatação da Universidade Federal da Fronteira Sul (UFFS)
+Aplicação destinada a ajudar a melhorar o acompanhamento dos alunos do curso de Ciência da Computação da Universidade Federal da Fronteira Sul (UFFS)
 
 Nesse projeto existem exemplos de implementação de:
 * Navegation Drawer
