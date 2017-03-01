@@ -1,6 +1,5 @@
 package duan.example.faltamuito;
 
-import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -14,7 +13,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +23,6 @@ import duan.example.faltamuito.adapters.SubjectsAdapter;
 import duan.example.faltamuito.adapters.TabBarAdapter;
 import duan.example.faltamuito.models.Category;
 import duan.example.faltamuito.models.Subject;
-
 
 public class MaterialsActivity extends AppCompatActivity {
 
@@ -65,7 +62,6 @@ public class MaterialsActivity extends AppCompatActivity {
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-
     }
 
     @Override
@@ -86,7 +82,6 @@ public class MaterialsActivity extends AppCompatActivity {
     }
 
     public static class MyFragment extends Fragment {
-
         private View fragment;
         private static final String KEY = "subject";
         private ListView listViewSubject;
@@ -129,4 +124,3 @@ public class MaterialsActivity extends AppCompatActivity {
         }
     }
 }
-

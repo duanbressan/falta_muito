@@ -20,6 +20,7 @@ import java.util.List;
 import duan.example.faltamuito.DAOs.DAOCategory;
 import duan.example.faltamuito.DAOs.DAOSubject;
 import duan.example.faltamuito.adapters.SubjectsInformationAdapter;
+import duan.example.faltamuito.adapters.SubjectsInformationIntegralAdapter;
 import duan.example.faltamuito.models.Subject;
 import duan.example.faltamuito.utilitys.PieChartView;
 import io.realm.Realm;
@@ -218,6 +219,16 @@ public class MainActivity extends AppCompatActivity
 
         DAOCategory daoCategory = new DAOCategory(this);
         SubjectsInformationAdapter subjectsAdapter = new SubjectsInformationAdapter(this, daoCategory.findAllCategory());
+
+        listView.setAdapter(subjectsAdapter);
+    }
+
+    private void setFullSubjectInformationIntegral(){
+
+        ListView listView = (ListView) findViewById(R.id.listViewSubject);
+
+        DAOCategory daoCategory = new DAOCategory(this);
+        SubjectsInformationIntegralAdapter subjectsAdapter = new SubjectsInformationIntegralAdapter(this, daoCategory.findAllCategory());
 
         listView.setAdapter(subjectsAdapter);
     }
