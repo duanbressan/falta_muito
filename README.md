@@ -13,3 +13,6 @@ Nesse projeto existem exemplos de implementação de:
 
 ## Tela De Matérias
 ![ScreenShot](https://uploaddeimagens.com.br/images/000/610/558/full/subjects.JPG?1461852312)
+
+### Link para download direto do Apk:
+[Download] (https://github.com/duanbressan/falta_muito/blob/master/apk/Falta%20Muito%20APK.apk)
