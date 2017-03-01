@@ -6,6 +6,7 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <string name="action_dev">Desenvolvedor</string>
     <string name="pagina">Página</string>
 
     <string name="minhas_materias">Minhas Matérias</string>

@@ -1,6 +1,7 @@
 package duan.example.faltamuito;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,8 +14,6 @@ import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import org.achartengine.GraphicalView;
-
 import java.util.List;
 
 import duan.example.faltamuito.DAOs.DAOCategory;
@@ -22,12 +21,12 @@ import duan.example.faltamuito.DAOs.DAOSubject;
 import duan.example.faltamuito.adapters.SubjectsInformationAdapter;
 import duan.example.faltamuito.adapters.SubjectsInformationIntegralAdapter;
 import duan.example.faltamuito.models.Subject;
-import duan.example.faltamuito.utilitys.PieChartView;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 
-public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+    private static String developer_url = "https://github.com/duanbressan";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +69,8 @@ public class MainActivity extends AppCompatActivity
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if (id == duan.example.faltamuito.R.id.action_settings) {
+        if (id == duan.example.faltamuito.R.id.action_dev) {
+            loadUrlDeveloperInfo();
             return true;
         }
 
@@ -231,5 +231,10 @@ public class MainActivity extends AppCompatActivity
         SubjectsInformationIntegralAdapter subjectsAdapter = new SubjectsInformationIntegralAdapter(this, daoCategory.findAllCategory());
 
         listView.setAdapter(subjectsAdapter);
+    }
+
+    private void loadUrlDeveloperInfo(){
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(developer_url));
+        startActivity(browserIntent);
     }
 }
