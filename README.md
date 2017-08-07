@@ -15,4 +15,4 @@ Nesse projeto existem exemplos de implementação de:
 ![ScreenShot](https://uploaddeimagens.com.br/images/000/610/558/full/subjects.JPG?1461852312)
 
 ### Link para download direto do Apk:
-[Download] (https://github.com/duanbressan/falta_muito/blob/master/apk/Falta%20Muito%20APK.apk)
+[Download pelo Mega](https://mega.nz/#!IOx1VSgI!ffsBBFJ2hPsOqQ3tgtWXnWPFDCgQtG7iqSeGIAkVPZs)
