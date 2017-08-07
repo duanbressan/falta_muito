@@ -16,3 +16,4 @@ Nesse projeto existem exemplos de implementação de:
 
 ### Link para download direto do Apk:
 [Download pelo Mega](https://mega.nz/#!IOx1VSgI!ffsBBFJ2hPsOqQ3tgtWXnWPFDCgQtG7iqSeGIAkVPZs)
+[Download pelo Drive](https://drive.google.com/file/d/0B747khiT60edRGxNZEg2WHY0SE0/view?usp=sharing)
